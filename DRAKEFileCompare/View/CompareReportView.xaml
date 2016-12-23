@@ -1,0 +1,47 @@
+﻿<Window x:Class="DRAKEFileCompare.View.CompareReportView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DRAKEFileCompare.View"
+        Title="File Compare Report" 
+        SizeToContent="WidthAndHeight"
+        Background="#FF252526" Icon="/DRAKEFileCompare;component/BlackDRAKE-icon.ico">
+    <Window.Resources>
+        <ResourceDictionary Source="/ResourceDictionary/ResourceDictionary.xaml" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <Menu Margin="10,0,10,0"
+              Background="#FF252526"
+              Foreground="White"
+              IsManipulationEnabled="True"
+              VerticalAlignment="Bottom"
+              Grid.ColumnSpan="8">
+                <MenuItem Header="File">
+                    <MenuItem Header="Print"
+                              Click="Print_Click"/>
+                    <MenuItem Header="Exit"
+                              Click="Close_Click"/>
+                </MenuItem>
+            </Menu>
+            <DockPanel Margin="5">
+                <Border BorderBrush="White"
+                    Background="#FF252526"
+                    BorderThickness="2"
+                    Margin="5"
+                    Padding="10"
+                    DockPanel.Dock="Top">
+                    <StackPanel>
+                        <Label Content="Eddynet CSV File Compare Report"
+                               HorizontalAlignment="Center"
+                               Foreground="White"/>
+                        <ListBox x:Name="CompareReportListBox" 
+                                 ItemsSource="{Binding Path=CompareReportList}"
+                                 MaxHeight="500"/>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>

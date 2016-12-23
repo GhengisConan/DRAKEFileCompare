@@ -4,9 +4,9 @@
 // Created          : 04-05-2016
 //
 // Last Modified By : Conan D. Foster
-// Last Modified On : 04-05-2016
+// Last Modified On : 12-08-2016
 // ***********************************************************************
-// <copyright file="MainWindow.xaml.cs" company="Blackdrake Inc.">
+// <copyright file="CompareReportViewModel.cs" company="Blackdrake Inc.">
 //     Copyright ©  2016
 //     All Rights Reserved.
 // </copyright>
@@ -20,28 +20,25 @@
 // obtained from Blackdrake Inc.
 // </summary>
 // ***********************************************************************
-using System.Windows;
-using DRAKEFileCompare.ViewModel;
+using System.Collections.Generic;
 
-namespace DRAKEFileCompare
+namespace DRAKEFileCompare.ViewModel
 {
     /// <summary>
-    /// Class MainWindow.
+    /// Class CompareReportViewModel.
+    /// view model for Compare Report window
     /// </summary>
-    /// <seealso cref="System.Windows.Window" />
-    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
-    public partial class MainWindow : Window
+    public class CompareReportViewModel
     {
         #region constructor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow" /> class.
+        /// Initializes a new instance of the <see cref="CompareReportViewModel"/> class.
         /// </summary>
-        public MainWindow()
+        /// <param name="compareReport">The compare report.</param>
+        public CompareReportViewModel(List<string> compareReport)
         {
-            InitializeComponent();
-            _viewModel = new MainWindowViewModel();
-            this.DataContext = _viewModel;
+            this._compareReport = compareReport;
         }
 
         #endregion
@@ -49,22 +46,22 @@ namespace DRAKEFileCompare
         #region fields
 
         /// <summary>
-        /// The view model
+        /// The compare report
         /// </summary>
-        private MainWindowViewModel _viewModel;
+        private List<string> _compareReport;
 
         #endregion
 
-        #region private methods
+        #region properties
 
         /// <summary>
-        /// Handles the Click event of the Close control.
+        /// Gets or sets the compare report list.
         /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Close_Click(object sender, RoutedEventArgs e)
+        /// <value>The compare report list.</value>
+        public List<string> CompareReportList
         {
-            this.Close();
+            get { return this._compareReport; }
+            set { if (this._compareReport == value) { return; } this._compareReport = value; }
         }
 
         #endregion

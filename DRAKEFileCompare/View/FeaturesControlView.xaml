@@ -1,0 +1,267 @@
+﻿<UserControl x:Class="DRAKEFileCompare.View.FeaturesControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DRAKEFileCompare.View">
+    <Grid>
+        <FlowDocumentScrollViewer
+            VerticalScrollBarVisibility="Disabled">
+            <FlowDocument 
+                FontFamily="Calibri" 
+                FontSize="12"
+                FontStretch="UltraExpanded"
+                ColumnWidth="500"
+                PagePadding="50"
+                ColumnGap="0"
+                PageHeight="Auto"
+                PageWidth="Auto"
+                MinPageHeight="3in"
+                MinPageWidth="5in"
+                MaxPageHeight="6in"
+                MaxPageWidth="10in">
+                <Paragraph 
+                    FontSize="20"
+                    Foreground="#FF5B9BD5">
+                    Quick Start
+                </Paragraph>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    CSV FILE SELECTION
+                </Paragraph>
+                <List
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Select File (EIMS CSV File) - Launches a system specific Open File Dialog to allow for the selection of an EIMS CSV formatted file.  File Dialog allows for the selection of any file with a .CSV or .TXT extension.  Once the file selection has been made, the file name and path will be displayed in the associated Filename text box.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            Select File (Eddynet DM CSV File) - Launches a system specific Open File Dialog to allow for the selection of an EIMS CSV formatted file.  File Dialog allows for the selection of any file with a .CSV or .TXT extension.  Once the file selection has been made, the file name and path will be displayed in the associated Filename text box.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    SETTINGS
+                </Paragraph>
+                <List
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Ignore Leg - The Ignore Leg checkbox, when selected will tell the compare program to skip any comparison of the Leg field within either file, as long as that field exists.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            Ignore Probe SN - The Ignore Probe SN checkbox, when selected will tell the compare program to skip any comparison of the Probe SN field within either file, as long as that field exists.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    COMPARE
+                </Paragraph>
+                <List
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Compare - The Compare button, when selected will launch the compare process between the two selected files.  Once the comparison has been completed, the File Compare Report window will be launched to display all results of the file comparison.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            File Compare Report - The File Compare Report window, when launched will display all results of the compare process separated by each process of the file compare.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph 
+                    Margin="0,100,0,0"
+                    FontSize="20"
+                    Foreground="#FF5B9BD5">
+                    Features
+                </Paragraph>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    FILE
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    File Menu gives access to the Exit Menu option.
+                </Paragraph>
+                <List
+                    Margin="50,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Exit - Terminates the applications and closes all application windows in a memory safe condition.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    LICENSE
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    License Menu gives access to the View License Menu option.
+                </Paragraph>
+                <List
+                    Margin="50,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            View License - Displays License Agreement section, located within the application help file.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    HELP
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    Help Menu gives access to the View Help and About DRAKE Compare Menu options.
+                </Paragraph>
+                <List
+                    Margin="50,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            View Help - Displays the application help file, allowing navigation of all topics and content.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            About DRAKE Compare - Displays About DRAKE Compare section, located with the application help file.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    CSV FILE SELECTION
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    The CSV File Selection section of the application window gives access to the Select File buttons and the Filename text box.   While the Filename text boxes identify themselves as either EIMS CSV File or Eddynet DM CSV File, internally it does not matter which file is selected in either widget.  File validation is performed to ensure that the file selected exists and is readable.  The Compare button will not be enabled until a valid file has been selected.
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    The File Format for each file to be compared is important in that they should be the same for both files.  In addition, all header entries within each file should be preceded by the ‘#’ character, as all lines with this prefix will be ignored.  Also, all spaces preceding and following entry lines will be ignored, but spaces within each comma separated field will be evaluated.  Finally, any empty or blank lines in the file will be skipped.
+                </Paragraph>
+                <List
+                    Margin="50,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Select File (EIMS CSV File) - Launches a system specific Open File Dialog to allow for the selection of an EIMS CSV formatted file.  File Dialog allows for the selection of any file with a .CSV or .TXT extension.  Once the file selection has been made, the file name and path will be displayed in the associated Filename text box.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            Select File (Eddynet DM CSV File) - Launches a system specific Open File Dialog to allow for the selection of an EIMS CSV formatted file.  File Dialog allows for the selection of any file with a .CSV or .TXT extension.  Once the file selection has been made, the file name and path will be displayed in the associated Filename text box.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    SETTINGS
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    The Settings section of the application window gives access to the Ignore Leg and Ignore Probe SN filters.  These filters are hard-coded within the application and expect these fields to be located in a known position with each entry of the CSV formatted file.  The Ignore Leg filter expects the Ignore Leg field to be located in the 16th position of the CSV file, and the Ignore Probe SN filter expects the Ignore Probe SN field to be located in the 18th position of the CSV file.
+                </Paragraph>
+                <List
+                    Margin="50,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Ignore Leg - The Ignore Leg checkbox, when selected will tell the compare program to skip any comparison of the Leg field within either file, as long as that field exists.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            Ignore Probe SN - The Ignore Probe SN checkbox, when selected will tell the compare program to skip any comparison of the Probe SN field within either file, as long as that field exists.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    COMPARE
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    The Compare process of the application formats each file and performs a bi-directional line by line comparison between them.  Once the process has been completed, the Compare program launches a File Compare Report displaying all results of the comparison.
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    The formatting process of the Compare consists of removing all header lines and null space at the beginning or end of a report line, converting all tabs to spaces, and removing any empty lines.  If filters have been selected, these particular fields are also removed from each report line.  In addition, a key is created based upon the first two fields of the CSV file, assumed to be the ROW and COL.  All entries within the file are grouped and sorted by this key to allow for accurate comparison of multiple lines per key.
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    The compare process of the Compare consists of a comparison of all key values to find missing entries within either file.  Then each key value is then compared line by line to look for discrepancies.  All errors are written to the File Compare Report to be displayed upon completion.
+                </Paragraph>
+                <List
+                    Margin="50,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Compare - The Compare button, when selected will launch the compare process between the two selected files.  Once the comparison has been completed, the File Compare Report window will be launched to display all results of the file comparison.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    FILE COMPARE REPORT
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    The File Compare Report window, when launched will display all results of the compare process separated by each process of the file compare.  The Compare Report contains all report lines for each key value pair, which contains discrepancies between the two files.  All report lines associated with a key value pair, will be listed for each file beginning with the first file or EIMS file followed by the second file or DM file.  Report lines will be displayed exactly as they are written in the file, with each value separated by a comma.
+                </Paragraph>
+                <List
+                    Margin="50,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Print - The Print button, when selected will compose a final compare report for printing, launching the system specific Print Dialog to enable the user to select how the report will be printed.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</UserControl>

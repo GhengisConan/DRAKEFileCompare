@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DRAKEFileCompare")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("The DM-EIMS file compare, checks Zetec Eddynet formatted csv files from the Eddynet DM database and the EIMS database for discrepancies. The application allows for the exclusion of some fields within the file.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("BlackDRAKE Inc.")]
 [assembly: AssemblyProduct("DRAKEFileCompare")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2.1.2.2")]
+[assembly: AssemblyFileVersion("2.1.2.2")]

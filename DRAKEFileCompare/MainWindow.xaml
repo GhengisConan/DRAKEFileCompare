@@ -4,9 +4,128 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DRAKEFileCompare"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="DRAKE File Compare" 
+        Height="475" Width="525"
+        Background="#FF252526" 
+        ResizeMode="NoResize" Icon="BlackDRAKE-icon.ico">
+    <Window.Resources>
+        <ResourceDictionary Source="/ResourceDictionary/ResourceDictionary.xaml" />
+    </Window.Resources>
     <Grid>
-        
+        <StackPanel>
+            <Menu Margin="10,0,10,0"
+              Background="#FF252526"
+              Foreground="White"
+              IsManipulationEnabled="True"
+              VerticalAlignment="Bottom"
+              Grid.ColumnSpan="8">
+                <MenuItem Header="File">
+                    <MenuItem Header="Exit"
+                          Click="Close_Click"/>
+                </MenuItem>
+                <MenuItem Header="License">
+                    <MenuItem Header="View License"
+                          Command="{Binding Path=ViewLicense}"/>
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem Header="View Help"
+                          Command="{Binding Path=ViewHelp}"/>
+                    <MenuItem Header="About DRAKE Compare"
+                          Command="{Binding Path=ViewAbout}"/>
+                </MenuItem>
+            </Menu>
+            <DockPanel Margin="5">
+                <Border BorderBrush="White"
+                    Background="#FF252526"
+                    BorderThickness="2"
+                    Margin="5"
+                    Padding="10"
+                    DockPanel.Dock="Top">
+                    <StackPanel>
+                        <Label Content="CSV File Selection" 
+                           HorizontalAlignment="Center" 
+                           Foreground="White"/>
+                        <Label Content="EIMS CSV File"
+                           HorizontalAlignment="Right"
+                           Foreground="White"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="SelectEIMSFilePathButton" 
+                                Content="Select File"
+                                Height="20" Width="75"
+                                Command="{Binding SelectEIMSFilePath}"/>
+                            <Separator Width="25" Visibility="Hidden"/>
+                            <TextBox x:Name="EIMSFilePathTextBox" 
+                                 Width="365"
+                                 Text="{Binding Path=EIMSFilePathText, 
+                            UpdateSourceTrigger=PropertyChanged, 
+                            ValidatesOnDataErrors=True}"/>
+                        </StackPanel>
+                        <Separator Height="10" Visibility="Hidden"/>
+                        <Label Content="Eddynet DM CSV File"
+                           HorizontalAlignment="Right"
+                           Foreground="White"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="SelectDMFilePathButton" 
+                                Content="Select File"
+                                Height="20" Width="75"
+                                Command="{Binding SelectDMFilePath}"/>
+                            <Separator Width="25" Visibility="Hidden"/>
+                            <TextBox x:Name="DMFilePathTextBox" 
+                                 Width="365"
+                                 Text="{Binding Path=DMFilePathText, 
+                            UpdateSourceTrigger=PropertyChanged, 
+                            ValidatesOnDataErrors=True}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+            <DockPanel Margin="5">
+                <Border BorderBrush="White"
+                    Background="#FF252526"
+                    BorderThickness="2"
+                    Margin="5"
+                    Padding="10"
+                    DockPanel.Dock="Top">
+                    <StackPanel>
+                        <StackPanel>
+                            <Label Content="Settings"
+                                   Foreground="White"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Separator Width="15" Visibility="Hidden"/>
+                                <Label Content="Ignore Leg" 
+                                       Foreground="White"/>
+                                <Separator Width="41" Visibility="Hidden"/>
+                                <CheckBox x:Name="IgnoreLegCheckBox" 
+                                      VerticalAlignment="Center"
+                                      IsChecked="{Binding Path=IgnoreLegCheckBoxIsChecked,
+                                UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Separator Width="15" Visibility="Hidden"/>
+                                <Label Content="Ignore Probe SN" 
+                                       Foreground="White"/>
+                                <Separator Width="10" Visibility="Hidden"/>
+                                <CheckBox x:Name="IgnoreProbeSNCheckBox" 
+                                      VerticalAlignment="Center"
+                                      IsChecked="{Binding Path=IgnoreProbeSNCheckBoxIsChecked,
+                                UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+            <Separator Height="10" Visibility="Hidden"/>
+            <StackPanel Orientation="Horizontal">
+                <Separator Width="5" Visibility="Hidden"/>
+                <Image Source="Image/BlackDRAKE-icon.png" Height="80" Width="107" Stretch="Fill"/>
+                <Separator Width="310" Visibility="Hidden"/>
+                <Button x:Name="CompareButton"
+            		Content="Compare"
+            		VerticalAlignment="Bottom"
+            		Height="40" Width="75"
+            		IsEnabled="{Binding CompareButtonIsEnabled}"
+            		Command="{Binding Compare}" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

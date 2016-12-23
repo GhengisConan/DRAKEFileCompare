@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="DRAKEFileCompare.View.AboutControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DRAKEFileCompare.View">
+    <Grid>
+        <FlowDocumentScrollViewer
+            VerticalScrollBarVisibility="Disabled">
+            <FlowDocument 
+                FontFamily="Calibri" 
+                FontSize="12"
+                FontStretch="UltraExpanded"
+                ColumnWidth="500"
+                PagePadding="50"
+                ColumnGap="0"
+                PageHeight="Auto"
+                PageWidth="Auto"
+                MinPageHeight="3in"
+                MinPageWidth="5in"
+                MaxPageHeight="6in"
+                MaxPageWidth="10in">
+                <Paragraph 
+                    FontSize="20"
+                    Foreground="#FF5B9BD5">
+                    About DRAKE Compare - Version 2.1
+                </Paragraph>
+                <Paragraph
+                    Margin="20,0,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    SCOPE
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    DRAKE Compare was created to perform a complete and thorough line by line comparison of disparate Eddynet Data Management databases.  DRAKE Compare compares two comma separated value (CSV) files of the same column format and reports all discrepancies between them.  DRAKE Compare was designed to compare the ZETEC EIMS data management software csv file output with that of the ZETEC EddynetDM data management software csv file output, but as the program was written, any two CSV files can be compared as long as the report lines are of the same format.
+                </Paragraph>
+                <Paragraph
+                    Margin="20,20,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    FILE FORMAT
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    In order for the DRAKE Compare application to perform successfully, both comparison comma separated value (CSV) files must have the same column format for all report lines.  For the ZETEC data management systems, the default Master Report file export format of the EIMS data management software is compatible with the Legacy Report file export format of the EddynetDM data management software.  For all other data management software systems, the exported file report lines need to contain the same report fields in the same order in both files for this application to work correctly.
+                </Paragraph>
+                <Paragraph
+                    Margin="20,20,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    FILE COMPARISON
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    DRAKE Compare compares each report line of each file to determine exact equivalence, and within each file all headers prefaced with a “#” character, blank lines and leading and following spaces are ignored.  Within the selection options of the application, the user has the opportunity to ignore the preset LEG and PROBE SN fields, which are assumed to be in the 16th and 18th fields respectively.
+                </Paragraph>
+                <Paragraph 
+                    Margin="0,100,0,0"
+                    FontSize="20"
+                    Foreground="#FF5B9BD5">
+                    About This Release
+                </Paragraph>
+                <Paragraph
+                    Margin="20,20,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    SOFTWARE UPDATES
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    This version of DRAKE Compare includes the following software updates.
+                </Paragraph>
+                <List
+                    Margin="50,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Compare Report - File->Print - Implemented printing capability within the Compare Report window.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            License->View License - Implemented the capability to view the license agreement through this menu selection.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            Help->View Help - Implemented the capability to view the complete help document through this menu selection.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            Help->About DRAKE Compare – Implemented the capability to view the application About document through this menu selection.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,20,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    BUG FIXES
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    This version of DRAKE Compare includes the following bug fixes.
+                </Paragraph>
+                <List
+                    Margin="50,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    <ListItem>
+                        <Paragraph>
+                            Compare - Corrected a failure of the compare process to ignore null or empty lines within the file.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph
+                    Margin="20,20,0,0"
+                    FontSize="14"
+                    Foreground="#FF595959">
+                    LOOKING FORWARD
+                </Paragraph>
+                <Paragraph
+                    Margin="40,0,0,0"
+                    Foreground="#FFAEAAAA">
+                    The future of DRAKE Compare will likely contain more report filters as required within the Settings section of the application window.  These filters will be added as requested by the user in a timely manner.  Additionally, a drag-and-drop feature may be added to the application window, allowing the user to drag the files into the application rather than having to select them through the file dialog.
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</UserControl>

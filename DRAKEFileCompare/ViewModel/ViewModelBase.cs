@@ -6,7 +6,7 @@
 // Last Modified By : Conan D. Foster
 // Last Modified On : 04-05-2016
 // ***********************************************************************
-// <copyright file="MainWindow.xaml.cs" company="Blackdrake Inc.">
+// <copyright file="ViewModelBase.cs" company="Blackdrake Inc.">
 //     Copyright ©  2016
 //     All Rights Reserved.
 // </copyright>
@@ -20,51 +20,36 @@
 // obtained from Blackdrake Inc.
 // </summary>
 // ***********************************************************************
-using System.Windows;
-using DRAKEFileCompare.ViewModel;
+using System.ComponentModel;
 
-namespace DRAKEFileCompare
+namespace DRAKEFileCompare.ViewModel
 {
     /// <summary>
-    /// Class MainWindow.
+    /// Class ViewModelBase.
+    /// Base ViewModel contains prototype for INotifyPropertyChanged.
     /// </summary>
-    /// <seealso cref="System.Windows.Window" />
-    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
-    public partial class MainWindow : Window
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
+    public class ViewModelBase : INotifyPropertyChanged
     {
-        #region constructor
+        #region INotifyPropertyChanged members
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow" /> class.
-        /// </summary>
-        public MainWindow()
-        {
-            InitializeComponent();
-            _viewModel = new MainWindowViewModel();
-            this.DataContext = _viewModel;
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
-        #region fields
+        #region INotifyPropertyChanged methods
 
         /// <summary>
-        /// The view model
+        /// Raises the property changed.
         /// </summary>
-        private MainWindowViewModel _viewModel;
-
-        #endregion
-
-        #region private methods
-
-        /// <summary>
-        /// Handles the Click event of the Close control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void Close_Click(object sender, RoutedEventArgs e)
+        /// <param name="propertyName">Name of the property.</param>
+        public void RaisePropertyChanged(string propertyName)
         {
-            this.Close();
+            PropertyChangedEventHandler propertyChangedEventHandler = PropertyChanged;
+            if (propertyChangedEventHandler != null)
+            {
+                propertyChangedEventHandler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
         #endregion

@@ -1,12 +1,11 @@
 ﻿// ***********************************************************************
 // Assembly         : DRAKEFileCompare
 // Author           : Conan D. Foster
-// Created          : 04-05-2016
+// Created          : 12-09-2016
 //
 // Last Modified By : Conan D. Foster
-// Last Modified On : 04-05-2016
+// Last Modified On : 12-09-2016
 // ***********************************************************************
-// <copyright file="MainWindow.xaml.cs" company="Blackdrake Inc.">
 //     Copyright ©  2016
 //     All Rights Reserved.
 // </copyright>
@@ -20,28 +19,27 @@
 // obtained from Blackdrake Inc.
 // </summary>
 // ***********************************************************************
+using System;
+using System.Collections.Generic;
 using System.Windows;
-using DRAKEFileCompare.ViewModel;
 
-namespace DRAKEFileCompare
+namespace DRAKEFileCompare.View
 {
     /// <summary>
-    /// Class MainWindow.
+    /// Interaction logic for HelpView.xaml
     /// </summary>
     /// <seealso cref="System.Windows.Window" />
     /// <seealso cref="System.Windows.Markup.IComponentConnector" />
-    public partial class MainWindow : Window
+    public partial class HelpView : Window
     {
         #region constructor
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow" /> class.
-        /// </summary>
-        public MainWindow()
+        public HelpView(string title, List<string> helpList)
         {
             InitializeComponent();
-            _viewModel = new MainWindowViewModel();
-            this.DataContext = _viewModel;
+            this.Title = title;
+            this._helpList = helpList;
+            this._setHelpItems();
         }
 
         #endregion
@@ -49,9 +47,10 @@ namespace DRAKEFileCompare
         #region fields
 
         /// <summary>
-        /// The view model
+        /// The help list
+        /// String list of help items contained with help window.
         /// </summary>
-        private MainWindowViewModel _viewModel;
+        private List<string> _helpList;
 
         #endregion
 
@@ -65,6 +64,38 @@ namespace DRAKEFileCompare
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// Sets the help items.
+        /// </summary>
+        private void _setHelpItems()
+        {
+            foreach (string item in this._helpList)
+            {
+                Console.WriteLine(item);
+                switch (item)
+                {
+                    case "Title":
+                        TitleControlView titleView = new TitleControlView();
+                        this.HelpStackPanel.Children.Add(titleView);
+                        break;
+                    case "About":
+                        AboutControlView aboutView = new AboutControlView();
+                        this.HelpStackPanel.Children.Add(aboutView);
+                        break;
+                    case "Features":
+                        FeaturesControlView featuresView = new FeaturesControlView();
+                        this.HelpStackPanel.Children.Add(featuresView);
+                        break;
+                    case "License":
+                        LicenseControlView licenseView = new LicenseControlView();
+                        this.HelpStackPanel.Children.Add(licenseView);
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         #endregion
